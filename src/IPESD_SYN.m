@@ -1,3 +1,9 @@
+% ----------------------------------------------------------------
+% Set the 3D synoptic-scale heat source over the equatorial region
+% Upward momentum and heat transport induced by the heat source
+% ----------------------------------------------------------------
+
+
 % ============================================== 
 %                synoptic Q                  
 % ==============================================
