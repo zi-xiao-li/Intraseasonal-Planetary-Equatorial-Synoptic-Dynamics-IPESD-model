@@ -1,0 +1,1 @@
+# Intraseasonal-Planetary-Equatorial-Synoptic-Dynamics-IPESD-model
