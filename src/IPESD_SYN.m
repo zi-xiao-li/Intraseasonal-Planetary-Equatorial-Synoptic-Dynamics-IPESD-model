@@ -1,23 +1,23 @@
 % ============================================== 
 %                synoptic Q                  
 % ==============================================
-clear all;  clc
+clear all; clc
 
-phi0    = pi/4;     % straitform lag  pi/4
-a       = 1/1;      % ratio: straitform and convective
+phi0    = pi/4;     % straitform lag pi/4
+a       = 1/1;      % ratio of stratiform to convective component
 phit    = 0;        % arbitrary wave speed
 e       = 0.125;
 y0      = 0;
-x_scale = 1000;  % km
+x_scale = 1000;     % km
 X_scale = 12500;
 y_scale = 1000;
-t_scale = 3.3;   % days
+t_scale = 3.3;      % days
 z_scale = 16/pi;
-u_scale = 6.25;  % m/s
+u_scale = 6.25;     % m/s
 
-% ===== Warm Pool ====
+% ===== Warm Pool =====
 
-Lx      = 5000;    % width of warm pool dimensionless at synoptic-scale
+Lx      = 5000;     % Width of warm pool (dimensionless, synoptic scale)
 Ly      = 2000; 
 xmin    = -Lx/x_scale;
 xmax    = Lx/x_scale;
@@ -25,8 +25,9 @@ ymin    = -Ly/y_scale;
 ymax    = Ly/y_scale;
 zmin    = 0;
 zmax    = pi;
-%[x y z] = meshgrid(linspace(xmin,xmax,101),linspace(ymin,ymax,81),...
-%	linspace(zmin,zmax,30));   % 注意meshgrid中input1为列(经度)；input2为行(纬度)
+
+% [x, y, z] = meshgrid(linspace(xmin, xmax, 101), linspace(ymin, ymax, 81), ...
+% linspace(zmin, zmax, 30));  % Note: in meshgrid, input1 corresponds to columns (longitude), input2 to rows (latitude)
 
 syms x y z 
 
@@ -84,8 +85,8 @@ for ii=1:length(xx)
         S_snp_eq(ii,jj) = S_snp_eq_func(xx(ii),zz(jj));
         u_snp_eq(ii,jj) = u_snp_eq_func(xx(ii),zz(jj));
         w_snp_eq(ii,jj) = w_snp_eq_func(xx(ii),zz(jj));
-        %v_snp_eq(ii,jj) = v_snp_eq_func(xx(ii),zz(jj)); 为0
-        %p_snp_eq(ii,jj) = p_snp_eq_func(xx(ii),zz(jj)); 为0
+        %v_snp_eq(ii,jj) = v_snp_eq_func(xx(ii),zz(jj)); = 0
+        %p_snp_eq(ii,jj) = p_snp_eq_func(xx(ii),zz(jj)); = 0
         %t_snp_eq(ii,jj) = t_snp_eq_func(xx(ii),zz(jj));
      end
 end
@@ -97,42 +98,46 @@ w_snp_eq = w_snp_eq';
 %p_snp_eq = p_snp_eq';
 %t_snp_eq = t_snp_eq';
 
-%--real plot
-
+% -- Realistic plot
 
 figure
 
-%subplot(2,2,1)
-%--colorbar
-colortable = textread('WhiteBlueGreenYellowRed.txt');
+% -- Color table
+colortable = textread('WhiteBlueGreenYellowRed.txt');  % Read colormap from file
 colormap(colortable);
-%--坐标
-[x_vtc z_vtc] = meshgrid(linspace(xmin,xmax,101),linspace(zmin,zmax,30));
-%--热源
-contourf(x_vtc,z_vtc,S_snp_eq,'LineStyle','none')
-hold on
-%--风场
-stride1 = 3;
-stride2 = 3;
-u_snpp_eq = u_snp_eq([3:stride1:size(u_snp_eq,1)-3],[3:stride2:size(u_snp_eq,2)-3]);
-w_snpp_eq = w_snp_eq([3:stride1:size(w_snp_eq,1)-3],[3:stride2:size(w_snp_eq,2)-3]);
-%--坐标
-[x_vtc_wnd z_vtc_wnd] = meshgrid(linspace(xmin,xmax,size(u_snpp_eq,2)),...
-	linspace(zmin,zmax,size(u_snpp_eq,1)));
 
-quiver(x_vtc_wnd,z_vtc_wnd,u_snpp_eq,w_snpp_eq,'-k','MaxHeadSize',0.05)
-xlabel('Zonal(x 1000km)')
-ylabel('z(km)')
+% -- Coordinates for contour plot
+[x_vtc, z_vtc] = meshgrid(linspace(xmin, xmax, 101), linspace(zmin, zmax, 30));
+
+% -- Heat source (contour fill of synoptic variable)
+contourf(x_vtc, z_vtc, S_snp_eq, 'LineStyle', 'none')
+hold on
+
+% -- Wind field (subsampled for clarity)
+stride1 = 3;  % subsample in vertical
+stride2 = 3;  % subsample in horizontal
+u_snpp_eq = u_snp_eq(3:stride1:end-3, 3:stride2:end-3);
+w_snpp_eq = w_snp_eq(3:stride1:end-3, 3:stride2:end-3);
+
+% -- Coordinates for quiver plot
+[x_vtc_wnd, z_vtc_wnd] = meshgrid(linspace(xmin, xmax, size(u_snpp_eq, 2)), ...
+                                  linspace(zmin, zmax, size(u_snpp_eq, 1)));
+
+% -- Overlay wind vectors
+quiver(x_vtc_wnd, z_vtc_wnd, u_snpp_eq, w_snpp_eq, '-k', 'MaxHeadSize', 0.05)
+
+% -- Axis labels
+xlabel('Zonal (x 1000 km)')
+ylabel('Vertical (z km)')
 yticklabels({'0','2.5','5','7.5','10','12.5','15'})
 
-
-ax             = gca;
-c              = colorbar;
-ax.FontSize    = 12;
-c.LineWidth    = 1.;
-c.FontName     = 'Arial';
-c.FontSize     = 12;
-
+% -- Colorbar and axes formatting
+ax = gca;
+c = colorbar;
+ax.FontSize = 12;
+c.LineWidth = 1.0;
+c.FontName = 'Arial';
+c.FontSize = 12;
 
 
 
@@ -155,17 +160,17 @@ FT = matlabFunction(FT);
 figure
 
 
-colorbar_start_1 = -0.7; % 其实应该是
+colorbar_start_1 = -0.7;
 colorbar_end_1   = 0.7;
 colorbar_int_1   = 0.1;
-colorbar_start_2 = -0.1; % 其实应该是
+colorbar_start_2 = -0.1;
 colorbar_end_2   = 0.1;
 colorbar_int_2   = 0.025;
 colortable = textread('WhiteBlueGreenYellowRed.txt');
 colormap(colortable);
-%--坐标
-[y_vtc z_vtc]      = meshgrid(linspace(ymin,ymax,81),linspace(zmin,zmax,30));
-%--数值
+% -- Coordinates
+[y_vtc, z_vtc] = meshgrid(linspace(ymin, ymax, 81), linspace(zmin, zmax, 30));
+% -- Variables / Data arrays
 yy     = [];
 zz     = [];
 FU_vtc = [];
