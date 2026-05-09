@@ -87,7 +87,7 @@ Output matrices represent planetary-scale responses suitable for further analysi
 
 ### EMT and EHT
 <p align="center">
-  <img src="figures/emt_eht.jpg" width="70%" />
+  <img src="figures/emt_eht.jpg" width="80%" />
 </p>
 
 ### Planetary-scale Response
