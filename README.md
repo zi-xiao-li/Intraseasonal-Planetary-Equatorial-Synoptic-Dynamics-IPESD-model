@@ -53,3 +53,46 @@ run('IPESD-main.m');
 % Step 3: Load results and visualize
 load('data/l01.txt'); % Example output: zonal velocity
 imagesc(l); colorbar; xlabel('Longitude'); ylabel('Time');
+
+## Users Guide
+
+Users can modify synoptic heating amplitudes and phases to simulate different CCKW structures.  
+Output matrices represent planetary-scale responses suitable for further analysis.
+
+---
+
+## Key Parameters
+
+| Parameter        | Description               | Value / Unit          |
+|-----------------|---------------------------|---------------------|
+| e               | Froude number             | 0.125               |
+| Lx, Ly          | Warm pool dimensions       | 5000 km × 2000 km  |
+| z_max           | Tropopause height         | 16 km               |
+| u_scale         | Horizontal velocity scale | 6.25 m/s            |
+| w_scale         | Vertical velocity scale   | 0.025 m/s           |
+| momentum_damping| Momentum damping          | 0.18 day⁻¹          |
+| heat_damping    | Thermal damping           | 0.1 day⁻¹           |
+
+*(Complete parameters are consistent with Biello & Majda 2005.)*
+
+---
+
+## Figures
+
+### Synoptic-scale Heating and Velocity Fields
+<p align="center">
+  <img src="figures/synoptic_heating_velocity.png" width="70%" />
+</p>
+
+### Planetary-scale Response
+<p align="center">
+  <img src="figures/planetary_response.png" width="70%" />
+</p>
+
+---
+
+## References
+
+* Majda, A. J., & Biello, J. A., 2004: A multiscale model for tropical-extratropical interactions. *Journal of the Atmospheric Sciences*, 61, 332–355.
+* Biello, J. A., & Majda, A. J., 2005: Multiscale analysis of tropical convection and wave interactions. *Journal of the Atmospheric Sciences*, 62, 169–191.
+
