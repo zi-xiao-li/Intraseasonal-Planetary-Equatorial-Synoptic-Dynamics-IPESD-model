@@ -82,7 +82,12 @@ Output matrices represent planetary-scale responses suitable for further analysi
 
 ### Synoptic-scale Heating and Velocity Fields
 <p align="center">
-  <img src="figures/synoptic_heating_velocity.png" width="70%" />
+  <img src="figures/synoptic_heating_velocity.jpg" width="70%" />
+</p>
+
+### EMT and EHT
+<p align="center">
+  <img src="figures/emt_eht.jpg" width="70%" />
 </p>
 
 ### Planetary-scale Response
