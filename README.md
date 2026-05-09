@@ -53,6 +53,7 @@ run('IPESD-main.m');
 % Step 3: Load results and visualize
 load('data/l01.txt'); % Example output: zonal velocity
 imagesc(l); colorbar; xlabel('Longitude'); ylabel('Time');
+```
 
 ## Users Guide
 
