@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project provides MATLAB scripts for simulating the **Intraseasonal Planetary Equatorial Synoptic Dynamics (IPESD) model**, a multi-scale model designed to study the upscale effects of **Convectively Coupled Kelvin Waves (CCKWs)** on the Madden-Julian Oscillation (MJO). The method follows the multi-scale equations derived by **Majda & Biello (2004, 2005)**, coupling synoptic-scale perturbations with planetary-scale responses through **Equatorial Momentum Transport (EMT)** and **Equatorial Heat Transport (EHT)**.
+This project provides MATLAB scripts for simulating the **Intraseasonal Planetary Equatorial Synoptic Dynamics (IPESD) model**, a multi-scale model designed to study the upscale effects of **Convectively Coupled Kelvin Waves (CCKWs)** on the Madden-Julian Oscillation (MJO). The method follows the multi-scale governing equations derived by **Majda & Biello (2004, 2005)**, coupling synoptic-scale perturbations with planetary-scale responses through **Equatorial Momentum Transport (EMT)** and **Equatorial Heat Transport (EHT)**.
 
 Key features:
 
@@ -16,12 +16,12 @@ Key features:
 
 ## Model Setup
 
-1. **Synoptic-scale heating (SEWTG):**  
+1. **Synoptic-scale heating — governed by the synoptic-scale equatorial weak temperature gradient (SEWTG) equations:**  
    * Defines vertical and horizontal heating profiles for deep convection and shallow clouds.
    * Heating region is idealized in the Indian Ocean with a width of 5000 km.
    * Includes first and second baroclinic modes representing deep and shallow convection.
 
-2. **Planetary-scale response (QLELWE):**  
+2. **Planetary-scale response — governed by the quasilinear equatorial long-wave (QLELWE) equations:**  
    * Driven by EMT and EHT computed from SEWTG solutions.
    * Solved using spectral Hermite modal decomposition for baroclinic modes.
 
@@ -37,7 +37,6 @@ Key features:
 | `IPESD-syn.m`              | Defines synoptic-scale heating; computes velocity, temperature, and pressure perturbations.   |
 | `IPESD-main.m`             | Solves planetary-scale QLELWE using Hermite spectral decomposition; generates response fields. |
 | `data/`                     | Stores intermediate and output matrices (`l`, `v`, `r`) representing planetary-scale response. |
-| `utils/`                    | Helper functions for Hermite modes and numerical operations.                                  |
 
 ---
 
