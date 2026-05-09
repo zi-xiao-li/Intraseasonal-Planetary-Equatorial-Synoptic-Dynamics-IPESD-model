@@ -9,7 +9,7 @@
 % ==============================================
 clear all; clc
 
-phi0    = pi/4;     % straitform lag pi/4
+phi0    = pi/4;     % stratiform lag pi/4
 a       = 1/3;      % ratio of stratiform to convective component
 phit    = 0;        % arbitrary wave speed
 e       = 0.125;
