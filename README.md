@@ -92,7 +92,7 @@ Output matrices represent planetary-scale responses suitable for further analysi
 
 ### Planetary-scale Response
 <p align="center">
-  <img src="figures/planetary_response.png" width="70%" />
+  <img src="figures/planetary_response.png" width="80%" />
 </p>
 
 ---
