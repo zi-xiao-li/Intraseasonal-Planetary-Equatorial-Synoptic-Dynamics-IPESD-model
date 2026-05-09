@@ -92,6 +92,11 @@ Output matrices represent planetary-scale responses suitable for further analysi
 
 ---
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
 ## References
 
 * Majda, A. J., & Biello, J. A., 2004: A multiscale model for tropical-extratropical interactions. *Journal of the Atmospheric Sciences*, 61, 332–355.
