@@ -68,7 +68,7 @@ The output matrices represent planetary-scale circulation responses and can be u
 | e               | Froude number             | 0.125               |
 | x_scale, y_scale| Synoptic-scale dimensions | 1500 km × 1500 km   |
 | HT              | Tropopause height         | 16 km               |
-| u_scale         | Horizontal velocity scale | 6.25 m/s            |
+| u_scale,v_scale | Horizontal velocity scale | 6.25 m/s            |
 | w_scale         | Vertical velocity scale   | 0.025 m/s           |
 | d               | Momentum drag rate        | 0.18 day⁻¹          |
 
