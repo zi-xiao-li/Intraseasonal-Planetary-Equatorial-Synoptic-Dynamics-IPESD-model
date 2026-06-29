@@ -105,7 +105,7 @@ Output matrices represent planetary-scale responses suitable for further analysi
 
 * Biello, J. A., and A. J. Majda, 2005: A New Multiscale Model for the Madden–Julian Oscillation. Journal of the Atmospheric Sciences, 62, 1694–1721, https://doi.org/10.1175/JAS3455.1. *
 * Majda, A. J., and J. A. Biello, 2004: A multiscale model for tropical intraseasonal oscillations. Proceedings of the National Academy of Sciences, 101, 4736–4741, https://doi.org/10.1073/pnas.0401034101. *
-* Majda, A.J. and Klein, R., 2003: Systematic multiscale models for the tropics. Journal of the Atmospheric Sciences, 60(2), 393-408, https://doi.org/10.1175/1520-0469(2003)060<0393:SMMFTT>2.0.CO;2. *
+* Majda, A.J. and Klein, R., 2003: Systematic multiscale models for the tropics. Journal of the Atmospheric Sciences, 60(2), 393-408, [https://doi.org/10.1175/1520-0469(2003)060<0393:SMMFTT>2.0.CO;2](https://doi.org/10.1175/1520-0469(2003)060%3C0393:SMMFTT%3E2.0.CO;2). *
 
 ## License
 
