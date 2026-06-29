@@ -37,6 +37,7 @@ Key features:
 | `IPESD-syn.m`              | Defines synoptic-scale heating; computes velocity, temperature, and pressure perturbations.   |
 | `IPESD-main.m`             | Solves planetary-scale QLELWE using Hermite spectral decomposition; generates response fields. |
 | `data/`                     | Stores intermediate and output matrices (`l`, `v`, `r`) representing planetary-scale responses. |
+| `figures/` | Contains example figures illustrating synoptic-scale heating structures, EMT/EHT forcing, and planetary-scale responses. |
 
 ---
 
