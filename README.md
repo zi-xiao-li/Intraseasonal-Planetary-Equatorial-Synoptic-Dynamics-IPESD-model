@@ -7,7 +7,7 @@ This project provides MATLAB scripts for simulating the **Intraseasonal Planetar
 Key features:
 
 * Multi-scale decomposition of atmospheric variables: weather-scale perturbations and planetary-scale envelopes.
-* Explicit representation of vertical heating profiles for deep convection and shallow clouds.
+* Explicit representation of vertical heating profiles for deep convection and stratiform clouds.
 * Analytic computation of EMT and EHT as forcing terms for planetary-scale waves.
 * Quasi-linear solution method for efficient simulation of large-scale MJO responses.
 * Adjustable synoptic-scale heating profiles to explore different CCKW structures.
@@ -17,9 +17,9 @@ Key features:
 ## Model Setup
 
 1. **Synoptic-scale heating — governed by the synoptic-scale equatorial weak temperature gradient (SEWTG) equations:**  
-   * Defines vertical and horizontal heating profiles for deep convection and shallow clouds.
+   * Defines vertical and horizontal heating profiles for deep convection and stratiform clouds.
    * Heating region is idealized in the Indian Ocean with a width of 5000 km.
-   * Includes first and second baroclinic modes representing deep and shallow convection.
+   * Includes the first and second baroclinic modes representing deep convective and stratiform heating.
 
 2. **Planetary-scale response — governed by the quasilinear equatorial long-wave (QLELWE) equations:**  
    * Driven by EMT and EHT computed from SEWTG solutions.
@@ -56,7 +56,7 @@ imagesc(l); colorbar; xlabel('Longitude'); ylabel('Time');
 
 ## Users Guide
 
-Users can modify synoptic heating amplitudes and phases to simulate different CCKW structures.  
+Users can adjust the relative ratio and phase between synoptic-scale stratiform and deep convective heating to simulate different CCKW structures.
 Output matrices represent planetary-scale responses suitable for further analysis.
 
 ---
