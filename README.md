@@ -89,12 +89,12 @@ Output matrices represent planetary-scale responses suitable for further analysi
   <img src="figures/emt_eht.jpg" width="90%" />
 </p>
 
-### Planetary-scale Response: Fast
+### Planetary-scale Response: Fast-propagating MJO
 <p align="center">
   <img src="figures/Planetary-Response-fast.png" width="90%" />
 </p>
 
-### Planetary-scale Response: SLow
+### Planetary-scale Response: Slow-propagating MJO
 <p align="center">
   <img src="figures/Planetary-Response-slow.png" width="90%" />
 </p>
