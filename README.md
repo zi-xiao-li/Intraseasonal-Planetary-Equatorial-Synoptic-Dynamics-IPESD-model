@@ -57,7 +57,7 @@ imagesc(l); colorbar; xlabel('Longitude'); ylabel('Time');
 ## Users Guide
 
 Users can adjust the relative ratio and phase between synoptic-scale stratiform and deep convective heating to simulate different CCKW structures.
-The output matrices represent planetary-scale circulation responses and can be used for further diagnostic analyses.
+The output matrices describe the planetary-scale circulation response forced by EMT and EHT and can be used to compare the large-scale impacts of different CCKW heating structures.
 
 ---
 
