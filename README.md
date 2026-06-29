@@ -1,8 +1,8 @@
-# Intraseasonal-Planetary-Equatorial-Synoptic-Dynamics-IPESD-model
+# Intraseasonal Planetary Equatorial Synoptic Dynamics (IPESD) Model
 
 ## Overview
 
-This project provides MATLAB scripts for simulating the **Intraseasonal Planetary Equatorial Synoptic Dynamics (IPESD) model**, a multi-scale model designed to study the upscale effects of **Convectively Coupled Kelvin Waves (CCKWs)** on the Madden-Julian Oscillation (MJO). The method follows the multi-scale governing equations derived by **Majda & Biello (2004, 2005)**, coupling synoptic-scale perturbations with planetary-scale responses through **Equatorial Momentum Transport (EMT)** and **Equatorial Heat Transport (EHT)**.
+This project provides MATLAB scripts for simulating the **Intraseasonal Planetary Equatorial Synoptic Dynamics (IPESD) model**, a multi-scale framework designed to investigate the upscale impacts of **Convectively Coupled Kelvin Waves (CCKWs)** on the **Madden–Julian Oscillation (MJO)**. The model follows the governing equations derived by **Majda & Biello (2004, 2005)** and couples synoptic-scale perturbations with planetary-scale responses through **Eddy Momentum Transport (EMT)** and **Eddy Heat Transport (EHT)**.
 
 Key features:
 
@@ -19,14 +19,14 @@ Key features:
 1. **Synoptic-scale heating — governed by the synoptic-scale equatorial weak temperature gradient (SEWTG) equations:**  
    * Defines vertical and horizontal heating profiles for deep convection and stratiform clouds.
    * Heating region is idealized in the Indian Ocean with a width of 5000 km.
-   * Includes the first and second baroclinic modes representing deep convective and stratiform heating.
+   * Includes the first and second baroclinic modes representing deep convective heating and stratiform heating, respectively.
 
 2. **Planetary-scale response — governed by the quasilinear equatorial long-wave (QLELWE) equations:**  
    * Driven by EMT and EHT computed from SEWTG solutions.
    * Solved using spectral Hermite modal decomposition for baroclinic modes.
 
 3. **Coupling Mechanism:**  
-   * Synoptic heating → EMT/EHT → forcing of planetary-scale equations → MJO response.
+   * Synoptic-scale heating → EMT/EHT → forcing of the QLELWE system → planetary-scale circulation response.
 
 ---
 
@@ -36,7 +36,7 @@ Key features:
 | --------------------------- | --------------------------------------------------------------------------------------------- |
 | `IPESD-syn.m`              | Defines synoptic-scale heating; computes velocity, temperature, and pressure perturbations.   |
 | `IPESD-main.m`             | Solves planetary-scale QLELWE using Hermite spectral decomposition; generates response fields. |
-| `data/`                     | Stores intermediate and output matrices (`l`, `v`, `r`) representing planetary-scale response. |
+| `data/`                     | Stores intermediate and output matrices (`l`, `v`, `r`) representing planetary-scale responses. |
 
 ---
 
@@ -57,7 +57,7 @@ imagesc(l); colorbar; xlabel('Longitude'); ylabel('Time');
 ## Users Guide
 
 Users can adjust the relative ratio and phase between synoptic-scale stratiform and deep convective heating to simulate different CCKW structures.
-Output matrices represent planetary-scale responses suitable for further analysis.
+The output matrices represent planetary-scale circulation responses and can be used for further diagnostic analyses.
 
 ---
 
@@ -66,12 +66,11 @@ Output matrices represent planetary-scale responses suitable for further analysi
 | Parameter        | Description               | Value / Unit          |
 |-----------------|---------------------------|---------------------|
 | e               | Froude number             | 0.125               |
-| Lx, Ly          | Warm pool dimensions       | 5000 km × 2000 km  |
-| z_max           | Tropopause height         | 16 km               |
+| x_scale, y_scale| Synoptic-scale dimensions | 1500 km × 1500 km   |
+| HT              | Tropopause height         | 16 km               |
 | u_scale         | Horizontal velocity scale | 6.25 m/s            |
 | w_scale         | Vertical velocity scale   | 0.025 m/s           |
-| momentum_damping| Momentum damping          | 0.18 day⁻¹          |
-| heat_damping    | Thermal damping           | 0.1 day⁻¹           |
+| d               | Momentum drag rate        | 0.18 day⁻¹          |
 
 *(Complete parameters are consistent with Biello & Majda 2005.)*
 
